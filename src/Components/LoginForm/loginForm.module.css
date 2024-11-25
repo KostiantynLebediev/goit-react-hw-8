@@ -1,0 +1,58 @@
+.form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+  }
+  
+  .pageWrapper {
+    padding-top: 40px;
+  }
+  
+  .form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    position: relative;
+  }
+  
+  .form label:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  
+  .form label:last-of-type {
+    margin-bottom: 30px;
+  }
+  
+  .form input {
+    height: 35px;
+    padding-left: 20px;
+    font-size: 18px;
+    outline: transparent;
+  }
+  
+  .btn {
+    align-self: center;
+    padding: 12px 20px;
+    color: black;
+    font-weight: 600;
+  }
+  
+  .btn:hover {
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    color: #ffffff;
+  }
+  
+  .errorMessage {
+    color: red;
+    text-align: center;
+  }
+  
+  .form input::placeholder {
+    font-size: 18px;
+    color: grey;
+  }
