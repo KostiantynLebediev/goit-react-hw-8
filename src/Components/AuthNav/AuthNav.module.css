@@ -1,24 +1,11 @@
-.wrapper {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .link {
-    text-align: center;
+.link {
     display: inline-block;
-    padding: 12px 20px;
-    border-radius: 4px;
-    gap: 10px;
     text-decoration: none;
-    color: black;
-    font-weight: 600;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
   }
   
-  .link:hover {
-    transform: scale(1.1);
-  }
-  
-  .active {
-    color: white;
-    background-color: goldenrod;
+  .link.active {
+    color: red;
   }
