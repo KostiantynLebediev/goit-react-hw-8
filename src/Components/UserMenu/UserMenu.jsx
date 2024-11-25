@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "../../Redux/auth/selectors";
-import { logout } from "../../Redux/auth/operations";
-import { resetContacts } from "../../Redux/contacts/slice";
+import { selectUser } from "../../reduxs/auth/selectors";
+import { logout } from "../../reduxs/auth/operations";
+import { resetContacts } from "../../reduxs/contacts/slice";
 
 import styles from "./UserMenu.module.css";
 
