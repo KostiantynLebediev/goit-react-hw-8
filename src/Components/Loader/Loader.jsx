@@ -1,4 +1,4 @@
-import { ColorRing } from "react-spinner";
+import { ColorRing } from "react-loader-spinner";
 import styles from "./Loader.module.css";
 
 const Loader = () => {

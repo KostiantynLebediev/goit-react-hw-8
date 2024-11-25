@@ -1,5 +1,5 @@
 import styles from "./Contact.module.css";
-import { deleteContact } from "../../Redux/contacts/operations";
+import { deleteContact } from "../../redux/contacts/operations";
 
 import { FaPhone } from "react-icons/fa6";
 import { IoPerson } from "react-icons/io5";

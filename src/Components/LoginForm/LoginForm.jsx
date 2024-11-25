@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
-import { login } from "../../Redux/auth/operations";
+import { login } from "../../redux/auth/operations";
 
 import styles from "./LoginForm.module.css";
 
@@ -14,8 +14,8 @@ const LoginForm = () => {
   };
 
   const loginSchema = Yup.object({
-    email: Yup.string().email("Invalid email address").required("required"),
-    password: Yup.string().min(8, "At least 8 characters").required("required"),
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string().min(8, "At least 8 characters").required("Required"),
   });
 
   return (

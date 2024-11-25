@@ -2,7 +2,7 @@ import { Field, Formik, Form, ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
-import { register } from "../../Redux/auth/selectors";
+import { register } from "../../redux/auth/operations";
 
 import styles from "./RegistrationForm.module.css";
 
@@ -18,9 +18,9 @@ const RegistrationForm = () => {
     name: Yup.string()
       .min(2, "At least 2 characters")
       .max(20, "Max 20 characters")
-      .required("required"),
-    email: Yup.string().email("Invalid email address").required("required"),
-    password: Yup.string().min(8, "At least 8 characters").required("required"),
+      .required("Required"),
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string().min(8, "At least 8 characters").required("Required"),
   });
 
   return (
