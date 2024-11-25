@@ -1,20 +1,22 @@
-import { Layout } from '../Layout/Layout';
-import { PrivateRoute } from '../PrivateRoute/PrivateRout';
-import { RestrictedRoute } from '../RestrictedRoute/RestrictedRoute';
-import { refreshUser } from '../../Redux/auth/operations';
-import { selectIsRefreshing } from '../../Redux/auth/selectors';
-import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
-import { useEffect, lazy } from 'react';
+import { lazy, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 
-const HomePage = lazy(() => import('../../Pages/HomePage/HomePage'));
+import { selectIsRefreshing } from "./redux/auth/selectors";
+
+import Layout from "./components/Layout/Layout";
+import Loader from "./components/Loader/Loader";
+
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import { refreshUser } from "./redux/auth/operations";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
-  import('../../Pages/RegistrationPage/RigistationPage')
+  import("./pages/RegistrationPage/RegistrationPage")
 );
-const LoginPage = lazy(() => import('../../Pages/LoginPage/LoginPage'));
-const ContactsPage = lazy(() =>
-  import('../../Pages/ContactPage/ContactPage')
-);
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 
 function App() {
   const dispatch = useDispatch();
@@ -24,35 +26,47 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute
-              redirectTo="/contacts"
-              component={<RegistrationPage />}
+  return (
+    <>
+      {isRefreshing ? (
+        <div>
+          <Loader />
+        </div>
+      ) : (
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  restrictedTo="/contacts"
+                  component={<RegistrationPage />}
+                />
+              }
             />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-          }
-        />
-      </Routes>
-    </Layout>
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  restrictedTo="/contacts"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  restrictedTo="/login"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+          </Routes>
+        </Layout>
+      )}
+    </>
   );
 }
 

@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 
-import { selectIsLoggedIn } from "../../reduxs/auth/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
-import styles from "./Navigation";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
