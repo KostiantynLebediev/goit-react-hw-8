@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { selectIsLoggedIn } from "../../Redux/auth/selectors";
 
-import styles from "./Navigation.module.css";
+import styles from "./Navigation";
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
