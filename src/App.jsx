@@ -11,7 +11,7 @@ import RestrictedRoute from "./сomponents/RestrictedRoute/RestrictedRoute.jsx";
 import PrivateRoute from "./сomponents/PrivateRoute/PrivateRout.jsx";
 import { refreshUser } from "./redux/auth/operations.js";
 
-const HomePage = lazy(() => import("../src/pages/HomePage/HomePage.jsx"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
   import("./pages/RegistrationPage/RigistationPage.jsx")
 );
