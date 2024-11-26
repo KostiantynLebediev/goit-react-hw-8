@@ -4,11 +4,11 @@ import { Route, Routes } from "react-router-dom";
 
 import { selectIsRefreshing } from "./redux/auth/selectors.js";
 
-import Layout from "./Components/Layout/Layout.jsx";
-import Loader from "./Components/Loader/Loader.jsx";
+import Layout from "./сomponents/Layout/Layout.jsx";
+import Loader from "./сomponents/Loader/Loader.jsx";
 
-import RestrictedRoute from "./Components/RestrictedRoute/RestrictedRoute.jsx";
-import PrivateRoute from "./Components/PrivateRoute/PrivateRout.jsx";
+import RestrictedRoute from "./сomponents/RestrictedRoute/RestrictedRoute.jsx";
+import PrivateRoute from "./сomponents/PrivateRoute/PrivateRout.jsx";
 import { refreshUser } from "./redux/auth/operations.js";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));

@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectError, selectLoading } from "../../redux/contacts/selectors";
 import { fetchContacts } from "../../redux/contacts/operations";
 
-import ContactForm from "../../Components/ContactForm/ContactForm";
-import SearchBox from "../../Components/SearchBox/SearchBox";
-import ContactList from "../../Components/ContactList/ContactList";
-import Loader from "../../Components/Loader/Loader";
+import ContactForm from "../../сomponents/ContactForm/ContactForm";
+import SearchBox from "../../сomponents/SearchBox/SearchBox";
+import ContactList from "../../сomponents/ContactList/ContactList";
+import Loader from "../../сomponents/Loader/Loader";
 import styles from "./ContactPage.module.css";
 
 const ContactsPage = () => {
